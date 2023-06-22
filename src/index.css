@@ -1,0 +1,207 @@
+:root {
+  --color-bg-main: hsl(223, 19%, 93%);
+  --color-font-primary: hsl(211, 10%, 45%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg-main);
+  font-family: 'Rubik', sans-serif;
+  font-size: 13.5px;
+  color: var(--color-font-primary);
+}
+
+.comments-section {
+  width: 600px;
+  margin: 40px auto;
+}
+
+.comment-box {
+  display: flex;
+}
+
+.vote-count-cont {
+  flex-shrink: 0;
+}
+
+.comment-content-cont {
+  margin-left: 20px;
+}
+
+.comment-box,
+.comment-input-box {
+  padding: 20px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: white;
+  line-height: 1.6em;
+}
+
+.comment-input-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: var(--color-bg-main);
+  line-height: 1.6em;
+  border-radius: 0;
+  position: sticky;
+  bottom: 0;
+}
+
+.child-comment-thread {
+  margin-left: 25px;
+  padding-left: 25px;
+  border-left: 1.2px solid lightgray;
+}
+
+.profile-thumb {
+  align-self: center;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-thumb {
+  width: 40px;
+  height: 40px;
+}
+
+.comment-input-box textarea {
+  width: 445px;
+  height: 45px;
+  max-height: 100px;
+  margin: 0 20px;
+  padding: 10px;
+  border: 1.5px solid hsl(238, 40%, 52%);
+  border-radius: 5px;
+  background-color: var(--color-bg-main);
+  resize: none;
+  color: inherit;
+  font-family: 'Rubik';
+  vertical-align: middle;
+
+  scroll-padding: 10px 0;
+  font-size: inherit;
+}
+
+.comment-input-box textarea::placeholder {
+  font-family: 'Rubik';
+  font-size: 0.9em;
+}
+
+.comment-input-box textarea {
+  outline: none;
+}
+
+.comment-input-box textarea:focus {
+  border: 2px solid hsl(238, 40%, 52%);
+}
+
+.comment-input-box button {
+  align-self: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(238, 40%, 52%);
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.comment-input-box button:hover {
+  background-color: hsl(238, 49%, 73%);
+  cursor: pointer;
+}
+
+.comment-meta > span {
+  padding-left: 10px;
+}
+
+.comment-box > p {
+  margin-top: 12px;
+}
+
+.username {
+  color: hsl(212, 24%, 26%);
+  font-weight: 500;
+}
+
+.vote-count-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(228, 33%, 97%);
+  width: 35px;
+  height: 75px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.vote-count-cont * {
+  align-self: center;
+}
+
+.vote-count-cont p {
+  margin: 7px 0 5.5px 0;
+}
+
+.vote-count-cont svg:hover path {
+  stroke: hsl(238, 40%, 52%);
+  cursor: pointer;
+}
+
+.vote-count-cont svg path {
+  stroke: hsl(238, 49%, 73%);
+}
+
+/* attr selector is just to increase specifity */
+svg[class='voted'] path {
+  stroke: hsl(238, 40%, 52%);
+}
+
+.comment-meta {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.comment-meta-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-content-cont {
+  width: 100%;
+}
+
+.reply-btn {
+  cursor: pointer;
+}
+
+.reply-btn:hover > div > svg path {
+  fill: hsl(238, 49%, 73%);
+}
+
+.reply-btn:hover > div > span {
+  color: hsl(238, 49%, 73%);
+}
+
+.reply-btn > div > svg {
+  margin-right: 6px;
+}
+
+.reply-btn > div > * {
+  vertical-align: middle;
+}
+
+.reply-btn > div > span {
+  color: hsl(238, 40%, 52%);
+  font-weight: 500;
+}
