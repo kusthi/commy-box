@@ -35,7 +35,7 @@ function CommentInputBox({
         ref={commentInputRef}
         placeholder='Add a comment...'
         value={comment}
-        onChange={(e) => {
+        onChange={e => {
           setComment(e.target.value);
         }}
       />
@@ -54,7 +54,8 @@ function CommentInputBox({
             block: 'end',
             inline: 'center',
           });
-        }}>
+        }}
+      >
         Send
       </button>
     </div>

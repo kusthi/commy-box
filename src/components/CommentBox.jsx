@@ -15,28 +15,28 @@ function CommentBox({ commentData, children }) {
         <div className='vote-count-cont'>
           <PlusIcon
             onClick={() => {
-              setVotes((votes) =>
+              setVotes(votes =>
                 vote === 'up'
                   ? votes - 1
                   : vote === 'down'
                   ? votes + 2
                   : votes + 1
               );
-              setVote((vote) => (vote !== 'up' ? 'up' : ''));
+              setVote(vote => (vote !== 'up' ? 'up' : ''));
             }}
             className={vote === 'up' ? 'voted' : ''}
           />
           <p>{votes}</p>
           <MinusIcon
             onClick={() => {
-              setVotes((votes) =>
+              setVotes(votes =>
                 vote === 'down'
                   ? votes + 1
                   : vote === 'up'
                   ? votes - 2
                   : votes - 1
               );
-              setVote((vote) => (vote !== 'down' ? 'down' : ''));
+              setVote(vote => (vote !== 'down' ? 'down' : ''));
             }}
             className={vote === 'down' ? 'voted' : ''}
           />
@@ -44,7 +44,10 @@ function CommentBox({ commentData, children }) {
         <div className='comment-content-cont'>
           <div className='comment-meta-cont'>
             <div className='comment-meta'>
-              <img className='profile-thumb' src={commentData.user.image.png} />
+              <img
+                className='profile-thumb'
+                src={commentData.user.image.png}
+              />
               <span className='username'>{commentData.user.username}</span>
               <span>{commentData.createdAt}</span>
             </div>
